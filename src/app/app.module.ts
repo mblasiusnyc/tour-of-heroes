@@ -16,17 +16,21 @@ import { HeroService }         from './hero.service';
     FormsModule,
     RouterModule.forRoot([
       {
-        path: 'heroes',
-        component: HeroesComponent
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
       },
       {
         path: 'dashboard',
         component: DashboardComponent
       },
       {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
+        path: 'heroes',
+        component: HeroesComponent
+      },
+      {
+      	path: 'detail/:id',
+      	component: HeroDetailComponent
       }
     ])
   ],
